@@ -11,22 +11,39 @@ const app = express()
 // the get() takes two argu.. the first is the rout "app.com"
 // second argu... function. this function will send back
 app.get('', (req, res) => {
-  res.send('Hello express app.js')
+  // res.send('Hello express app.js')
   // the send () allow is to send back the message.
+  res.send('<h1>Hello express app.js</h1>')
 })
 
 // ADDING THE HELP ROUT
 app.get('/help', (req, res) => {
-  res.send('Help page app.js')
+  // res.send('Help page app.js')
+  // res.send({
+  //   name: 'Rashed'
+  // })
+
+  res.send([{
+    name: 'Rashed'
+  },
+  {
+    name: 'Andrew'
+  }
+  ])
 })
 // adding the about rout
 app.get('/about', (req, res) => {
-  res.send('About the page app.js')
+  // res.send('About the page app.js')
+  res.send('<h1>About the page app.js</h1>')
 })
 
 // adding the weather rout
 app.get('/weather', (req, res) => {
-  res.send('Weather: app.js')
+  // res.send('Weather: app.js')
+  res.send({
+    forecast: 'It is rainning',
+    location: 'Malmo'
+  })
 })
 
 
