@@ -1,3 +1,4 @@
+const path = require('path')
 const express = require('express')
 // loading the express library
 // express is a function. you call express to create new application 
@@ -5,7 +6,12 @@ const express = require('express')
 // app.com //home page one domain with multiple routs
 // app.com/help
 // app.com/about
+// console.log(__dirname);
+// console.log(__filename);
+console.log(path.join(__dirname, '../public'));
 const app = express()
+const publicDirectoryPath = path.join(__dirname, '../public')
+app.use(express.static(publicDirectoryPath))
 
 // setting up the server
 // the get() takes two argu.. the first is the rout "app.com"
