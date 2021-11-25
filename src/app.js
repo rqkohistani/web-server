@@ -22,26 +22,26 @@ app.get('', (req, res) => {
   res.send('<h1>Hello express app.js</h1>')
 })
 
-// ADDING THE HELP ROUT
-app.get('/help', (req, res) => {
-  // res.send('Help page app.js')
-  // res.send({
-  //   name: 'Rashed'
-  // })
+// // ADDING THE HELP ROUT
+// app.get('/help', (req, res) => {
+//   // res.send('Help page app.js')
+//   // res.send({
+//   //   name: 'Rashed'
+//   // })
 
-  res.send([{
-    name: 'Rashed'
-  },
-  {
-    name: 'Andrew'
-  }
-  ])
-})
-// adding the about rout
-app.get('/about', (req, res) => {
-  // res.send('About the page app.js')
-  res.send('<h1>About the page app.js</h1>')
-})
+//   res.send([{
+//     name: 'Rashed'
+//   },
+//   {
+//     name: 'Andrew'
+//   }
+//   ])
+// })
+// // adding the about rout
+// app.get('/about', (req, res) => {
+//   // res.send('About the page app.js')
+//   res.send('<h1>About the page app.js</h1>')
+// })
 
 // adding the weather rout
 app.get('/weather', (req, res) => {
