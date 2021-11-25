@@ -1,49 +1,39 @@
 const path = require('path')
 const express = require('express')
-// loading the express library
-// express is a function. you call express to create new application 
-// imagine we own this domain 
-// app.com //home page one domain with multiple routs
-// app.com/help
-// app.com/about
-// console.log(__dirname);
-// console.log(__filename);
 console.log(path.join(__dirname, '../public'));
 const app = express()
 const publicDirectoryPath = path.join(__dirname, '../public')
+app.set('view engine', 'hbs')
 app.use(express.static(publicDirectoryPath))
 
-// setting up the server
-// the get() takes two argu.. the first is the rout "app.com"
-// second argu... function. this function will send back
+// the main domain or the root
 app.get('', (req, res) => {
-  // res.send('Hello express app.js')
-  // the send () allow is to send back the message.
-  res.send('<h1>Hello express app.js</h1>')
+  // res.send()we use in hbs render()
+  // res.render('index')
+  // so by calling render, express() goes and gets the view and converts it to html and makes to get an html back to the requester
+  // render takes two argu.. they must match index must be as index in views folder
+  res.render('index', {
+    title: 'Weather app',
+    name: 'Rashed'
+  })
 })
 
-// // ADDING THE HELP ROUT
-// app.get('/help', (req, res) => {
-//   // res.send('Help page app.js')
-//   // res.send({
-//   //   name: 'Rashed'
-//   // })
+// app.com/about
+app.get('/about', (req, res) => {
+  res.render('about', {
+    title: 'About me',
+    name: 'Rashed'
+  })
 
-//   res.send([{
-//     name: 'Rashed'
-//   },
-//   {
-//     name: 'Andrew'
-//   }
-//   ])
-// })
-// // adding the about rout
-// app.get('/about', (req, res) => {
-//   // res.send('About the page app.js')
-//   res.send('<h1>About the page app.js</h1>')
-// })
+})
+// app.com/help
+app.get('/help', (req, res) => {
+  res.render('help', {
+    helpText: 'This is some helpful text to the screen'
+  })
+})
 
-// adding the weather rout
+
 app.get('/weather', (req, res) => {
   // res.send('Weather: app.js')
   res.send({
