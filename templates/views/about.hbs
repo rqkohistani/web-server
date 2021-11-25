@@ -5,18 +5,21 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" href="/img/weather.png">
   <link rel="stylesheet" href="/css/styles.css">
 
   <title>about | page</title>
 </head>
 
 <body>
-  <h1>Hello From ABOUT HBS </h1>
-  <img src="/img/robot.png" alt="">
-  {{!-- <h1>{{title}}</h1> --}}
-  {{>header}}
-  {{!-- <h4>Created by {{name}}</h4> --}}
-  <h4>Created by {{>footer}}</h4>
+  <div class="main-content">
+    {{!-- <h1>Hello From ABOUT HBS </h1> --}}
+    {{!-- <h1>{{title}}</h1> --}}
+    {{>header}}
+    <img class="portrait" src="/img/robot.png" alt="">
+    {{!-- <h4>Created by {{name}}</h4> --}}
+  </div>
+  <h4> {{>footer}}</h4>
 </body>
 
 </html>

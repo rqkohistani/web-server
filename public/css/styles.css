@@ -56,3 +56,7 @@ button {
 img {
   width: 250px;
 }
+
+.error {
+  color: red;
+}

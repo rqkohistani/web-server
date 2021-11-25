@@ -62,14 +62,33 @@ app.get('/weather', (req, res) => {
     location: 'Malmo'
   })
 })
+
+// 3. about pattern match
+app.get('/about/*', (req, res) => {
+  res.render('404', {
+    title: '404',
+    name: 'Rashed',
+    errorMessage: 'Person not found'
+  })
+})
 // 2. specific pattern match
 app.get('/help/*', (req, res) => {
-  res.send('Help article not found')
+  // res.send('Help article not found')
+  res.render('404', {
+    title: '404',
+    name: 'Rashed',
+    errorMessage: 'Help article not found'
+  })
 })
 //1. In case of no match url then it's everything else that isn't listed up to match everything.
 // This is a generic one.
 app.get('*', (req, res) => {
-  res.send('<h4>My 404 page</h4>')
+  // res.send('<h4>My 404 page</h4>')
+  res.render('404', {
+    title: '404',
+    name: 'Rashed',
+    errorMessage: 'Page not found'
+  })
 })
 
 
