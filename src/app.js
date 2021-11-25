@@ -62,8 +62,12 @@ app.get('/weather', (req, res) => {
     location: 'Malmo'
   })
 })
-
-// In case of no match url then it's everything else that isn't listed up to match everything.
+// 2. specific pattern match
+app.get('/help/*', (req, res) => {
+  res.send('Help article not found')
+})
+//1. In case of no match url then it's everything else that isn't listed up to match everything.
+// This is a generic one.
 app.get('*', (req, res) => {
   res.send('<h4>My 404 page</h4>')
 })
