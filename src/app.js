@@ -63,6 +63,10 @@ app.get('/weather', (req, res) => {
   })
 })
 
+// In case of no match url then it's everything else that isn't listed up to match everything.
+app.get('*', (req, res) => {
+  res.send('<h4>My 404 page</h4>')
+})
 
 
 
