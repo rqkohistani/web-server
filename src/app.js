@@ -1,9 +1,28 @@
 const path = require('path')
 const express = require('express')
 console.log(path.join(__dirname, '../public'));
+console.log(path.join(__dirname, '../'));
 const app = express()
+
+// partials are part of the web page that can be reused multiple times.e.g headers,  footers.... first thing to start loading hbs
+const hbs = require('hbs')
+
+
+// Define paths for Express config
 const publicDirectoryPath = path.join(__dirname, '../public')
+const viewsPath = path.join(__dirname, '../templates/views')//changing the default path
+const partialsPath = path.join(__dirname, '../templates/partials')
+
+// Setup handlebars engine and views location
 app.set('view engine', 'hbs')
+app.set('views', viewsPath)//using the custom directory path
+hbs.registerPartials(partialsPath)
+// Remember any changes to the hbs files wont restart the server.
+// Run this instead: nodemon .\src\app.js => nodemon .\src\app.js -e js,hbs
+
+
+
+// Setup static directory to serve
 app.use(express.static(publicDirectoryPath))
 
 // the main domain or the root
@@ -29,7 +48,9 @@ app.get('/about', (req, res) => {
 // app.com/help
 app.get('/help', (req, res) => {
   res.render('help', {
-    helpText: 'This is some helpful text to the screen'
+    helpText: 'This is some helpful text to the screen',
+    title: 'help app.js ',
+    name: 'Rashed'
   })
 })
 
