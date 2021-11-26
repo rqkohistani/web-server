@@ -38,10 +38,11 @@ app.get('', (req, res) => {
     title: 'Weather app',
     name: 'Rashed'
   },
+  
   geocode(req.body.location, (response,{
     latitude, longitude, location } = {}
   ))
-
+  
   )
 })
 
@@ -63,13 +64,13 @@ app.get('/help', (req, res) => {
 })
 
 
-// app.get('/weather', (req, response) => {
-//   // res.send('Weather: app.js')
-//   geocode(req.body.location, (response,{
-//     latitude, longitude, location } = {}
-//   ))
+app.get('/weather', (req, response) => {
+  // res.send('Weather: app.js')
+  geocode(req.body.location, (response,{
+    latitude, longitude, location } = {}
+  ))
 
-// })
+})
 
 // 3. about pattern match
 app.get('/about/*', (req, res) => {
