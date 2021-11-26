@@ -37,13 +37,7 @@ app.get('', (req, res) => {
   res.render('index', {
     title: 'Weather app',
     name: 'Rashed'
-  },
-  
-  geocode(req.body.location, (response,{
-    latitude, longitude, location } = {}
-  ))
-  
-  )
+  })
 })
 
 // app.com/about
@@ -64,7 +58,7 @@ app.get('/help', (req, res) => {
 })
 
 
-app.get('/weather', (req, response) => {
+app.get('/current', (req, response) => {
   // res.send('Weather: app.js')
   geocode(req.body.location, (response,{
     latitude, longitude, location } = {}
