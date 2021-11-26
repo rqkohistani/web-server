@@ -25,8 +25,8 @@ weatherForm.addEventListener('submit', (e) => {
   const unitsIn = 'units=m'//by default is m check the weatherstack documentation for info f=fahrenheit, m=metric celsius
   const access_key = '47b0ec59a41936fddce4544b239349ab'
   // const url = `http://api.weatherstack.com/current?access_key=${access_key}&query=${location}&${unitsIn}
-  // const url = 'http://api.weatherstack.com/current?access_key='+access_key+'&query='+location
-  const url = '/current?access_key=' + access_key + '&query=' + location
+  const url = 'http://api.weatherstack.com/current?access_key='+access_key+'&query='+location
+  // const url = '/current?access_key=' + access_key + '&query=' + location
 
   fetch(url).then((response) => {
     console.log('test');
