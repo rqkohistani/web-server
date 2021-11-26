@@ -28,7 +28,7 @@ weatherForm.addEventListener('submit', (e) => {
   // const url = `/current?access_key=${access_key}&query=${location}&${unitsIn}`
 
 
-  fetch(url).then((response) => {
+  fetch('/current?access_key='+access_key+'&query='+location).then((response) => {
     console.log('test');
     // messageTwo.textContent = response.json()
     response.json().then((data) => {
