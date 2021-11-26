@@ -17,7 +17,7 @@ weatherForm.addEventListener('submit', (e) => {
   const location = search.value
 
   console.log(location);
-  messageOne.textContent = 'Permission denied - api usage out of limit  '
+  messageOne.textContent = 'Loading...'
   messageTwo.textContent = ''
 
 
