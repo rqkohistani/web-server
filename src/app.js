@@ -28,17 +28,17 @@ hbs.registerPartials(partialsPath)
 app.use(express.static(publicDirectoryPath))
 
 
-// // the main domain or the root
-// app.get('', (req, res) => {
-//   // res.send()we use in hbs render()
-//   // res.render('index')
-//   // so by calling render, express() goes and gets the view and converts it to html and makes to get an html back to the requester
-//   // render takes two argu.. they must match index must be as index in views folder
-//   res.render('index', {
-//     title: 'Weather app',
-//     name: 'Rashed'
-//   })
-// })
+// the main domain or the root
+app.get('', (req, res) => {
+  // res.send()we use in hbs render()
+  // res.render('index')
+  // so by calling render, express() goes and gets the view and converts it to html and makes to get an html back to the requester
+  // render takes two argu.. they must match index must be as index in views folder
+  res.render('index', {
+    title: 'Weather app',
+    name: 'Rashed'
+  })
+})
 
 // app.com/about
 app.get('/about', (req, res) => {
@@ -58,13 +58,14 @@ app.get('/help', (req, res) => {
 })
 
 
-app.get('', (req, response) => {
-  // res.send('Weather: app.js')
-  geocode(req.body.location, (response,{
-    latitude, longitude, location } = {}
-  ))
+// app.get('/weather', (req, response) => {
+//   // res.send('Weather: app.js')
+//   console.log('you see me');
+//   geocode(req.body.location, (response,{
+//     latitude, longitude, location } = {}
+//   ))
 
-})
+// })
 
 // 3. about pattern match
 app.get('/about/*', (req, res) => {
