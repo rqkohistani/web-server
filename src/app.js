@@ -37,10 +37,12 @@ app.get('', (req, res) => {
   res.render('index', {
     title: 'Weather app',
     name: 'Rashed'
-  })
+  },
   geocode(req.body.location, (response,{
     latitude, longitude, location } = {}
   ))
+
+  )
 })
 
 // app.com/about
