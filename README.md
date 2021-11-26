@@ -1,4 +1,5 @@
 # web-server
+# You can visit the weather app at <https://rq-weather-app.herokuapp.com/>
 ### npm install
 ### Problem with starting up the server install nodemon globally `npm i -g nodemon`
 
