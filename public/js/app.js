@@ -26,13 +26,13 @@ weatherForm.addEventListener("submit", (e) => {
 
   fetch(url).then((response) => {
     console.log("test");
-    // messageTwo.textContent = response.json()
+    messageTwo.textContent = response.json()
     response.json().then((data) => {
       if (data.error) {
         messageOne.textContent =
           location + ": Unable to find location. Try another search e.g Malmo ";
       } else {
-        messageOne.textContent = `Temperatrue: ${data.current.temperature} => Wind speed: ${data.current.wind_speed} => Humidity: ${data.current.humidity} => Feels like: ${data.current.feelslike} => cloud cover: ${data.current.cloudcover} => wind speed : ${data.current.wind_speed} => latitude: ${data.location.lat} => longtitude: ${data.location.lon} `;
+        messageOne.textContent = `Temperatures: ${data.current.temperature} => Wind speed: ${data.current.wind_speed} => Humidity: ${data.current.humidity} => Feels like: ${data.current.feelslike} => cloud cover: ${data.current.cloudcover} => wind speed : ${data.current.wind_speed} => latitude: ${data.location.lat} => longtitude: ${data.location.lon} `;
       }
     });
   });
